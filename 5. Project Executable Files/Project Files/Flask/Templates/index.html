@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chronic Kidney Disease Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f8fa;
+            color: #333;
+            font-family: 'Fira Code', monospace;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #007bff;
+            padding: 1rem;
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 18px;
+            margin-left: 15px;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('hospital-background.jpg');
+            background-size: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        .header h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+        .header p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+        .container-main {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .container-main h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-control {
+            background-color: #e9ecef;
+            color: #495057;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+        }
+        .form-control:focus {
+            background-color: #fff;
+            color: #495057;
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+        }
+        .btn-success {
+            margin-top: 20px;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-success:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Premier Renal Health</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>Chronic Kidney Disease Prediction</h1>
+        <p>Accurate predictions and early diagnosis for better management of kidney health.</p>
+    </div>
+
+    <div class="container-main">
+        <h1>Prediction Form</h1>
+        <form action="/index" method="POST">
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="text" class="form-control" name="age" required>
+            </div>
+            <div class="form-group">
+                <label for="bp">Blood Pressure:</label>
+                <input type="text" class="form-control" name="bp" required>
+            </div>
+            <div class="form-group">
+                <label for="sg">Specific Gravity:</label>
+                <input type="text" class="form-control" name="sg" required>
+            </div>
+            <div class="form-group">
+                <label for="al">Albumin:</label>
+                <input type="text" class="form-control" name="al" required>
+            </div>
+            <div class="form-group">
+                <label for="su">Sugar:</label>
+                <input type="text" class="form-control" name="su" required>
+            </div>
+            <div class="form-group">
+                <label for="rbc">Red Blood Cells:</label>
+                <input type="text" class="form-control" name="rbc" required>
+            </div>
+            <div class="form-group">
+                <label for="pc">Pus Cell:</label>
+                <input type="text" class="form-control" name="pc" required>
+            </div>
+            <div class="form-group">
+                <label for="pcc">Pus Cell clumps:</label>
+                <input type="text" class="form-control" name="pcc" required>
+            </div>
+            <div class="form-group">
+                <label for="ba">Bacteria:</label>
+                <input type="text" class="form-control" name="ba" required>
+            </div>
+            <div class="form-group">
+                <label for="bgr">Blood Glucose Random:</label>
+                <input type="text" class="form-control" name="bgr" required>
+            </div>
+            <div class="form-group">
+                <label for="bu">Blood Urea:</label>
+                <input type="text" class="form-control" name="bu" required>
+            </div>
+            <div class="form-group">
+                <label for="sc">Serum Creatinine:</label>
+                <input type="text" class="form-control" name="sc" required>
+            </div>
+            <div class="form-group">
+                <label for="sod">Sodium:</label>
+                <input type="text" class="form-control" name="sod" required>
+            </div>
+            <div class="form-group">
+                <label for="pot">Potassium:</label>
+                <input type="text" class="form-control" name="pot" required>
+            </div>
+            <div class="form-group">
+                <label for="hemo">Hemoglobin:</label>
+                <input type="text" class="form-control" name="hemo" required>
+            </div>
+            <div class="form-group">
+                <label for="pcv">Packed-cell volume:</label>
+                <input type="text" class="form-control" name="pcv" required>
+            </div>
+            <div class="form-group">
+                <label for="wc">White cells:</label>
+                <input type="text" class="form-control" name="wc" required>
+            </div>
+            <div class="form-group">
+                <label for="rc">Red Blood Cell Count:</label>
+                <input type="text" class="form-control" name="rc" required>
+            </div>
+            <div class="form-group">
+                <label for="htn">Hypertension:</label>
+                <input type="text" class="form-control" name="htn" required>
+            </div>
+            <div class="form-group">
+                <label for="dm">Diabetes mellitus:</label>
+                <input type="text" class="form-control" name="dm" required>
+            </div>
+            <div class="form-group">
+                <label for="cad">Coronary artery disease:</label>
+                <input type="text" class="form-control" name="cad" required>
+            </div>
+            <div class="form-group">
+                <label for="appet">Appetite:</label>
+                <input type="text" class="form-control" name="appet" required>
+            </div>
+            <div class="form-group">
+                <label for="pe">Pedal edema:</label>
+                <input type="text" class="form-control" name="pe" required>
+            </div>
+            <div class="form-group">
+                <label for="ane">Anemia:</label>
+                <input type="text" class="form-control" name="ane" required>
+            </div>
+            <button type="submit" class="btn btn-success btn-lg btn-block">Predict</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+         &copy; 2024 Premier Renal Health . All rights reserved.
+          </footer>
+
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      </body>
+      </html>
+

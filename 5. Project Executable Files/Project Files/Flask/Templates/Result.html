@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f8fa;
+            color: #333;
+            font-family: 'Fira Code', monospace;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            background-color: #007bff;
+            padding: 1rem;
+        }
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-size: 18px;
+            margin-left: 15px;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('hospital-background.jpg');
+            background-size: cover;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        .header h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+        .header p {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+        .container-main {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .container-main h1 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: #007bff;
+        }
+        .result {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+        .prediction-kidney {
+            color: #dc3545;
+        }
+        .prediction-not-kidney {
+            color: #28a745;
+        }
+        .footer {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Premier Renal Health</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>Prediction Result</h1>
+        <p>Your health is our priority</p>
+    </div>
+
+    <div class="container-main">
+        <h1 class="display-4">Result</h1>
+        <p class="result {{ 'prediction-kidney' if prediction == 0 else 'prediction-not-kidney' }}">
+            {{'Kidney Disease' if prediction == 0 else 'Not Kidney Disease'}}
+        </p>
+    </div>
+
+    <footer class="footer">
+       &copy; 2024 Premier Renal Health . All rights reserved.
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
